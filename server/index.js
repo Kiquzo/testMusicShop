@@ -2,10 +2,10 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
-import mysql from 'mysql2'; // Добавляем пакет mysql2
-import { createHmac } from 'crypto'; // Для проверки пароля
-import { randomBytes } from 'crypto'; // Для генерации соли
-import session from 'express-session'; // Для управления сессиями
+import mysql from 'mysql2';
+import { createHmac } from 'crypto';
+import { randomBytes } from 'crypto';
+import session from 'express-session';
 
 const app = express();
 const PORT = 5275;
@@ -13,7 +13,7 @@ const PORT = 5275;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Путь к папке dist (в корне проекта)
+// Путь к папке dist
 const distPath = path.join(__dirname, '..', 'dist');
 
 // Настройка подключения к базе данных MySQL
@@ -35,14 +35,21 @@ db.connect((err) => {
 
 // Middleware
 app.use(bodyParser.json());
+
+// Обслуживаем статические файлы из dist
 app.use(express.static(distPath));
+
+// Добавляем middleware для обслуживания других статических ресурсов
+app.use('/styles', express.static(path.join(__dirname, '..', 'styles')));
+app.use('/public', express.static(path.join(__dirname, '..', 'public')));
+app.use('/src', express.static(path.join(__dirname, '..', 'src')));
 
 // Настройка сессий
 app.use(session({
-    secret: 'your-secret-key', // Замените на свой секретный ключ
+    secret: 'your-secret-key',
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false } // Для production установите secure: true и используйте HTTPS
+    cookie: { secure: false }
 }));
 
 // Функция для хэширования пароля
@@ -75,7 +82,6 @@ app.post('/api/login', (req, res) => {
         return res.status(400).json({ error: 'Email и пароль обязательны' });
     }
 
-    // Поиск пользователя в базе данных
     const query = 'SELECT * FROM users WHERE email = ?';
     db.query(query, [email], (err, results) => {
         if (err) {
@@ -89,12 +95,10 @@ app.post('/api/login', (req, res) => {
 
         const user = results[0];
 
-        // Проверка пароля
         if (!verifyPassword(password, user.password)) {
             return res.status(401).json({ error: 'Неверный email или пароль' });
         }
 
-        // Сохранение данных пользователя в сессии
         req.session.user = {
             id: user.id,
             email: user.email,
@@ -102,6 +106,28 @@ app.post('/api/login', (req, res) => {
         };
 
         res.json({ success: true, role: user.role });
+    });
+});
+
+// API эндпоинт для записи на консультацию
+app.post('/api/consultation', (req, res) => {
+
+    const { name, email, message } = req.body;
+
+    if (!name || !email || !message) {
+        return res.status(400).json({ message: 'Все поля обязательны для заполнения' });
+    }
+
+    const DataTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+    const query = 'INSERT INTO Consultations (name, email, message, DataTime) VALUES (?, ?, ?, ?)';
+    db.execute(query, [name, email, message, DataTime], (err, results) => {
+        if (err) {
+            console.error('Ошибка при вставке данных:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+
+        res.status(201).json({ message: 'Запись на консультацию успешно создана' });
     });
 });
 
@@ -142,10 +168,9 @@ app.post('/api/delete', (req, res) => {
         return `DELETE FROM ${tableName} WHERE ${conditions}`;
     });
 
-    // Выполнение всех запросов на удаление
     deleteQueries = deleteQueries.join('; ');
 
-    console.log('SQL запросы на удаление:', deleteQueries); // Отладочная информация
+    console.log('SQL запросы на удаление:', deleteQueries);
 
     db.query(deleteQueries, (err, results) => {
         if (err) {
@@ -165,7 +190,7 @@ app.post('/api/update', (req, res) => {
         return res.status(400).json({ success: false, message: 'Некорректные данные для обновления' });
     }
 
-    console.log('Received data for update:', rowData); // Логирование полученных данных
+    console.log('Received data for update:', rowData);
 
     const columnNames = Object.keys(rowData);
     const idColumn = columnNames.find(col => col.toLowerCase().includes('id'));
@@ -178,7 +203,7 @@ app.post('/api/update', (req, res) => {
     const updates = columnNames.map(col => `${col} = ${mysql.escape(rowData[col])}`).join(', ');
     const query = `UPDATE ${tableName} SET ${updates} WHERE ${idColumn} = ${mysql.escape(idValue)}`;
 
-    console.log('Executing query:', query); // Логирование SQL запроса
+    console.log('Executing query:', query);
 
     db.query(query, (err, results) => {
         if (err) {
@@ -209,6 +234,39 @@ app.post('/api/add', (req, res) => {
         }
 
         res.status(200).json({ success: true });
+    });
+});
+
+// API эндпоинт для получения статистики консультаций
+app.get('/api/consultations/stats', (req, res) => {
+    const query = `
+      SELECT DATE(DataTime) AS date, COUNT(*) AS count
+      FROM Consultations
+      GROUP BY DATE(DataTime)
+      ORDER BY DATE(DataTime)
+    `;
+
+    db.execute(query, (err, results) => {
+        if (err) {
+            console.error('Ошибка при получении статистики консультаций:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+
+        res.status(200).json(results);
+    });
+});
+
+app.get('/api/tables/:tableName', (req, res) => {
+    const { tableName } = req.params;
+    const query = `SELECT * FROM ${tableName}`;
+
+    db.execute(query, (err, results) => {
+        if (err) {
+            console.error('Ошибка при получении данных:', err);
+            return res.status(500).json({ message: 'Ошибка сервера' });
+        }
+
+        res.status(200).json(results);
     });
 });
 
