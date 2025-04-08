@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Sound of Music</title>
+</head>
+<body>
+    <div id="consultationModal" class="conmodal">
+        <div class="consultation-content">
+            <h2 data-translate="consultationTitle"></h2>
+            <p data-translate="consultationSubtitle"></p>
+            <form id="consultationForm">
+                <label for="conname" data-translate="nameLabel"></label>
+                <input type="text" id="conname" name="name" data-translate-placeholder="namePlaceholder">
+
+                <label for="conemail" data-translate="emailLabel"></label>
+                <input type="email" id="conemail" name="email" data-translate-placeholder="emailPlaceholder">
+
+                <label for="conmessage" data-translate="questionLabel"></label>
+                <textarea id="messageModal" name="message" maxlength="1000"
+                    data-translate-placeholder="questionPlaceholder"></textarea>
+                <button type="submit" data-translate="signUpButton"></button>
+            </form>
+        </div>
+    </div>
+    <div id="contactsModal" class="contacts__modal">
+        <div class="contacts__content">
+            <div class="wrapper">
+                <div class="modal__phones">
+                    <div class="modal-header" data-translate="contactsTitle"></div>
+                    <a class="phone" href="/">+ 8 800 555 00 75</a>
+                    <a class="phone" href="/">+ 8 495 641 59 59</a>
+                    <a class="mailContact" href="/">soundofmusic@gmail.com</a>
+                </div>
+                <div class="modal__addresses">
+                    <div class="modal-header" data-translate="addressesTitle"></div>
+                    <span data-translate="address1"></span>
+                    <span data-translate="address2"></span>
+                    <span data-translate="address3"></span>
+                    <span data-translate="address4"></span>
+                    <span data-translate="address5"></span>
+                    <span data-translate="address6"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="wrapper">
+            <a href="/"><img src="/public/images/music-logo.png" alt="логотип"></a>
+            <div class="header__icons">
+                <button id="open-cart-btn"><img src="/public/icons/cart.png" alt="иконка корзины"></button>
+                <button id="open-email"><img src="/public/icons/message.png" alt="иконка консультации"></button>
+                <button id="open-sidebar"><img src="/public/icons/menu.png" alt="иконка меню"></button>
+            </div>
+        </div>
+    </header>
+    <div id="cart-modal" class="cart-modal hidden">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2 data-translate="cartTitle"></h2>
+                <button id="close-cart-btn">✖</button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <p id="cart-total" data-translate="cartTotal"></p>
+                <button id="checkout-btn" data-translate="checkoutButton"></button>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar animate__animated" id="sidebar">
+        <div class="wrapper">
+            <div class="sidebar__block">
+                <div class="sidebar__block-header" data-translate="sectionsTitle"></div>
+                <div class="sidebar__block-nav">
+                    <a href="/" data-translate="homeLink"></a>
+                    <a href="/src/pages/catalog.html" data-translate="catalogLink"></a>
+                    <a href="/src/pages/aboutUs.html" data-translate="aboutUsLink"></a>
+                    <button class="open-phone" data-translate="contactsLink"></button>
+                </div>
+                <div class="sidebar__block-header" data-translate="languagesTitle"></div>
+                <div class="sidebar_languages">
+                    <button id="RU">RU</button>
+                    <button id="EN">EN</button>
+                </div>
+                <div class="sidebar__block-header" data-translate="addressesTitle"></div>
+                <div class="sidebar_addresses">
+                    <span data-translate="address1"></span>
+                    <span data-translate="address2"></span>
+                    <span data-translate="address3"></span>
+                    <span data-translate="address4"></span>
+                    <span data-translate="address5"></span>
+                    <span data-translate="address6"></span>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="usInformation">
+        <div class="wrapper">
+            <img class="animate__animated animate__fadeInLeft" src="/public/images/our-shop.png"
+                alt="картинки магазина">
+            <div class="usInformation-block animate__animated animate__fadeInRight">
+                <p data-translate="aboutText1">
+
+                </p>
+                <p data-translate="aboutText2">
+
+                </p>
+                <p data-translate="aboutText3">
+
+                </p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="wrapper">
+            <a href="/"><img src="/public/images/music-logo.png" alt="логотип"></a>
+            <div class="footer-content">
+                <div class="footer__categoryes">
+                    <h4 data-translate="categoriesTitle"></h4>
+                    <a href="/" data-translate="category1"></a>
+                    <a href="/" data-translate="category2"></a>
+                    <a href="/" data-translate="category3"></a>
+                    <a href="/" data-translate="category4"></a>
+                    <a href="/" data-translate="category5"></a>
+                    <a href="/" data-translate="category6"></a>
+                    <a href="/" data-translate="category7"></a>
+                    <a href="/" data-translate="category8"></a>
+                </div>
+                <div class="footer__categoryes">
+                    <h4 data-translate="addressesTitle"></h4>
+                    <span data-translate="address1"></span>
+                    <span data-translate="address2"></span>
+                    <span data-translate="address3"></span>
+                    <span data-translate="address4"></span>
+                    <span data-translate="address5"></span>
+                    <span data-translate="address6"></span>
+                </div>
+                <div class="footer__dopInf">
+                    <div class="footer__dopInf-time">
+                        <h4 data-translate="workTimeTitle"></h4>
+                        <span data-translate="workTime"></span>
+                        <p data-translate="noBreaks"></p>
+                    </div>
+                    <div class="footer__dopInf__social">
+                        <h5 data-translate="socialTitle"></h5>
+                        <div class="footer__dopInf__social-content">
+                            <a href="/"><img src="/public/icons/vk.png" alt="icon vk"></a>
+                            <a href="/"><img src="/public/icons/tg.png" alt="icon tg"></a>
+                            <a href="/"><img src="/public/icons/pinterest.png" alt="icon pint"></a>
+                            <a href="/"><img src="/public/icons/youtube.png" alt="icon youtube"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/src/animation/wow.min.js"></script>
+</body>
+</html>

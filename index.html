@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Интернет-магазин музыкальных инструментов, оборудования и аксессуаров для музыкантов. У нас вы найдете гитары, синтезаторы, ударные установки, студийное оборудование, микрофоны и многое другое. Широкий ассортимент, выгодные цены, доставка по всей стране!">
+  <meta name="keywords"
+    content="Sound of Music, музыкальный магазин, купить музыкальные инструменты, гитары, синтезаторы, барабаны, студийное оборудование, микрофоны и аксессуары, интернет-магазин инструментов, музыкальное оборудование, звукозапись и студийная техника, аксессуары для музыкантов, профессиональный звук">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Sound of Music</title>
+</head>
+<body>
+  <div id="consultationModal" class="conmodal">
+    <div class="consultation-content">
+      <h2 data-translate="consultationTitle"></h2>
+      <p data-translate="consultationSubtitle"></p>
+      <form id="consultationForm">
+        <label for="conname" data-translate="nameLabel"></label>
+        <input type="text" id="conname" name="name" data-translate-placeholder="namePlaceholder">
+
+        <label for="conemail" data-translate="emailLabel"></label>
+        <input type="email" id="conemail" name="email" data-translate-placeholder="emailPlaceholder">
+
+        <label for="conmessage" data-translate="questionLabel"></label>
+        <textarea id="messageModal" name="message" maxlength="1000" data-translate-placeholder="questionPlaceholder"></textarea>
+        <button type="submit" data-translate="signUpButton"></button>
+      </form>
+    </div>
+  </div>
+  <div id="contactsModal" class="contacts__modal">
+    <div class="contacts__content">
+      <div class="wrapper">
+        <div class="modal__phones">
+          <div class="modal-header" data-translate="contactsTitle"></div>
+          <a class="phone" href="/">+ 8 800 555 00 75</a>
+          <a class="phone" href="/">+ 8 495 641 59 59</a>
+          <a class="mailContact" href="/">soundofmusic@gmail.com</a>
+        </div>
+        <div class="modal__addresses">
+          <div class="modal-header" data-translate="addressesTitle"></div>
+          <span data-translate="address1"></span>
+          <span data-translate="address2"></span>
+          <span data-translate="address3"></span>
+          <span data-translate="address4"></span>
+          <span data-translate="address5"></span>
+          <span data-translate="address6"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header>
+    <div class="wrapper">
+      <a href="/"><img src="/public/images/music-logo.png" alt="логотип"></a>
+      <div class="header__icons">
+        <button id="open-cart-btn"><img src="/public/icons/cart.png" alt="иконка корзины"></button>
+        <button id="open-email"><img src="/public/icons/message.png" alt="иконка консультации"></button>
+        <button id="open-sidebar"><img src="/public/icons/menu.png" alt="иконка меню"></button>
+      </div>
+    </div>
+  </header>
+  <div id="cart-modal" class="cart-modal hidden">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2 data-translate="cartTitle"></h2>
+        <button id="close-cart-btn">✖</button>
+      </div>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <p id="cart-total" data-translate="cartTotal"></p>
+        <button id="checkout-btn" data-translate="checkoutButton"></button>
+      </div>
+    </div>
+  </div>
+  <aside class="sidebar animate__animated" id="sidebar">
+    <div class="wrapper">
+      <div class="sidebar__block">
+        <div class="sidebar__block-header" data-translate="sectionsTitle"></div>
+        <div class="sidebar__block-nav">
+          <a href="/" data-translate="homeLink"></a>
+          <a href="/src/pages/catalog.html" data-translate="catalogLink"></a>
+          <a href="/src/pages/aboutUs.html" data-translate="aboutUsLink"></a>
+          <button class="open-phone" data-translate="contactsLink"></button>
+        </div>
+        <div class="sidebar__block-header" data-translate="languagesTitle"></div>
+        <div class="sidebar_languages">
+          <button id="RU">RU</button>
+          <button id="EN">EN</button>
+        </div>
+        <div class="sidebar__block-header" data-translate="addressesTitle"></div>
+        <div class="sidebar_addresses">
+          <span data-translate="address1"></span>
+          <span data-translate="address2"></span>
+          <span data-translate="address3"></span>
+          <span data-translate="address4"></span>
+          <span data-translate="address5"></span>
+          <span data-translate="address6"></span>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <section class="entry__section">
+    <div class="wrapper">
+      <div data-wow-delay="0.1s" class="entry__section__information-block wow animate__animated animate__fadeInUp">
+        <div class="ad__slider">
+          <div class="ad__slider__container">
+            <div class="ad__slider__container-content">
+              <div class="slide" style="background-image: url('/public/images/ad-slide-5.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-2.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-3.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-4.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-1.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-6.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-7.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-8.png');"></div>
+              <div class="slide" style="background-image: url('/public/images/ad-slide-9.png');"></div>
+            </div>
+            <img class="ad_left" src="/public/icons/left.png" alt="left">
+            <img class="ad_right" src="/public/icons/right.png" alt="right">
+          </div>
+          <div class="ad-slider-dots">
+            <span class="ad__slider-dot" data-slide="0"></span>
+            <span class="ad__slider-dot" data-slide="1"></span>
+            <span class="ad__slider-dot" data-slide="2"></span>
+            <span class="ad__slider-dot" data-slide="3"></span>
+            <span class="ad__slider-dot" data-slide="4"></span>
+            <span class="ad__slider-dot" data-slide="5"></span>
+            <span class="ad__slider-dot" data-slide="6"></span>
+            <span class="ad__slider-dot" data-slide="7"></span>
+            <span class="ad__slider-dot" data-slide="8"></span>
+          </div>
+        </div>
+        <a class="school" href="/"><img class="school" src="/public/images/music-school.png"
+            alt="вступайте к нам в школу"></a>
+      </div>
+      <div data-wow-delay="0.2s" class="category wow animate__animated animate__fadeInUp">
+        <h2 data-translate="popularCategoriesTitle"></h2>
+        <div class="category-wrapper">
+          <a class="category__content" id="first-category" href="/src/pages/catalog.html#acustic">
+            <div class="category__content-titel">
+              <span data-translate="category1"></span>
+            </div>
+          </a>
+          <a class="category__content" id="second-category" href="/src/pages/catalog.html#electric">
+            <div class="category__content-titel">
+              <span data-translate="category2"></span>
+            </div>
+          </a>
+          <a class="category__content" id="third-category" href="/src/pages/catalog.html#bass">
+            <div class="category__content-titel">
+              <span data-translate="category3"></span>
+            </div>
+          </a>
+          <a class="category__content" id="fourth-category" href="/src/pages/catalog.html#guitarAmplifiers">
+            <div class="category__content-titel">
+              <span data-translate="category4"></span>
+            </div>
+          </a>
+          <a class="category__content" id="fifth-category" href="/src/pages/catalog.html#synthesizers">
+            <div class="category__content-titel">
+              <span data-translate="category5"></span>
+            </div>
+          </a>
+          <a class="category__content" id="six-category" href="/src/pages/catalog.html#drums">
+            <div class="category__content-titel">
+              <span data-translate="category6"></span>
+            </div>
+          </a>
+          <a class="category__content" id="seven-category" href="/src/pages/catalog.html#micros">
+            <div class="category__content-titel">
+              <span data-translate="category7"></span>
+            </div>
+          </a>
+          <a class="category__content" id="eight-category" href="/src/pages/catalog.html#acsesuars">
+            <div class="category__content-titel">
+              <span data-translate="category8"></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="musicians">
+    <div data-wow-delay="0.1s" class="wrapper wow animate__animated animate__fadeInUp">
+      <h2 data-translate="musiciansTitle"></h2>
+      <img class="musicians_left" src="/public/icons/mLeft.png" alt="left">
+      <img class="musicians_right" src="/public/icons/mRight.png" alt="right">
+      <div class="musicians__slider">
+        <div class="musicians__slider__container">
+          <div class="musicians__slider__container-content">
+            <div class="musicians-slide">
+              <img src="/public/images/Anacondaz-img.png" alt="группа 1">
+              <span>Anacondaz</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Yorsh-img.png" alt="группа 2">
+              <span>Йорш</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Tank-img.png" alt="группа 3">
+              <span>Дайте танк (!)</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Animal-img.png" alt="группа 4">
+              <span>Animal ДжаZ</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Mummy-img.png" alt="группа 5">
+              <span>Мумий Тролль</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Nervy-img.png" alt="группа 6">
+              <span>Нервы</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Lumen-img.png" alt="группа 7">
+              <span>Lumen</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Kasta-img.png" alt="группа 8">
+              <span>Каста</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/RockHi-img.png" alt="группа 9">
+              <span>Рок Привет</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Hatters-img.png" alt="группа 10">
+              <span>The Hatters</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Soltwine-img.png" alt="группа 11">
+              <span>Soltwine</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/TMNV-img.png" alt="группа 12">
+              <span>TMNV</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Bread-img.png" alt="группа 13">
+              <span>ХЛЕБ</span>
+            </div>
+            <div class="musicians-slide">
+              <img src="/public/images/Pizza-umg.png" alt="группа 14">
+              <span>PIZZA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="catalog">
+    <div class="wrapper">
+      <h2 data-translate="saleTitle"></h2>
+      <div data-wow-delay="0.1s" class="catalog-cards wow animate__animated animate__fadeInUp">
+        <div class="card">
+          <img src="/public/catalog/IBANEZ-GRGR131EX-BKF.png" alt="иконка товара">
+          <div class="card__price"><span class="price">33 906 ₽</span><span class="first-price">39 890 ₽</span>
+            <div id="procent">-15%</div>
+          </div>
+          <div class="card-links">
+            <a id="categoryOfItem" href="/">Электрогитара</a>
+            <a id="nameOfItem" href="/">IBANEZ GRGR131EX-BKF</a>
+          </div>
+          <button data-translate="btnAddProd"></button>
+        </div>
+        <div class="card">
+          <img src="/public/catalog/YAMAHA-F310.png" alt="иконка товара">
+          <div class="card__price"><span class="price">17 592 ₽</span><span class="first-price">21 990 ₽</span>
+            <div id="procent">-20%</div>
+          </div>
+          <div class="card-links">
+            <a id="categoryOfItem" href="/">Акустическая гитара</a>
+            <a id="nameOfItem" href="/">YAMAHA F310</a>
+          </div>
+          <button data-translate="btnAddProd"></button>
+        </div>
+        <div class="card">
+          <img src="/public/catalog/BLUE-LAVA-Original.png" alt="иконка товара">
+          <div class="card__price"><span class="price">37 800 ₽</span><span class="first-price">42 000 ₽</span>
+            <div id="procent">-10%</div>
+          </div>
+          <div class="card-links">
+            <a id="categoryOfItem" href="/">Акустическая гитара</a>
+            <a id="nameOfItem" href="/">BLUE LAVA Original Acoustic</a>
+          </div>
+          <button data-translate="btnAddProd"></button>
+        </div>
+        <div class="card">
+          <img src="/public/catalog/Midiplus-TINY.png" alt="иконка товара">
+          <div class="card__price"><span class="price">10 890 ₽</span><span class="first-price">12 810 ₽</span>
+            <div id="procent">-15%</div>
+          </div>
+          <div class="card-links">
+            <a id="categoryOfItem" href="/">Синтезаторы</a>
+            <a id="nameOfItem" href="/">Midiplus TINY+</a>
+          </div>
+          <button data-translate="btnAddProd"></button>
+        </div>
+        <div class="card">
+          <img src="/public/catalog/VOX-VT20X.png" alt="иконка товара">
+          <div class="card__price"><span class="price">26 643 ₽</span><span class="first-price">40 990 ₽</span>
+            <div id="procent">-35%</div>
+          </div>
+          <div class="card-links">
+            <a id="categoryOfItem" href="/">Усилители для гитар</a>
+            <a id="nameOfItem" href="/">VOX VT20X</a>
+          </div>
+          <button data-translate="btnAddProd"></button>
+        </div>
+        <div class="card">
+          <img src="/public/catalog/BEHRINGER-C-1.png" alt="иконка товара">
+          <div class="card__price"><span class="price">6 390 ₽</span><span class="first-price">6 570 ₽</span>
+            <div id="procent">-3%</div>
+          </div>
+          <div class="card-links">
+            <a id="categoryOfItem" href="/">Микрофоны</a>
+            <a id="nameOfItem" href="/">BEHRINGER C-1</a>
+          </div>
+          <button data-translate="btnAddProd"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="brends">
+    <div class="wrapper">
+      <h2 data-translate="brandsTitle"></h2>
+      <div data-wow-delay="0.1s" class="brends__images wow animate__animated animate__fadeInUp">
+        <img src="/public/images/YAMAHA.png" alt="бренд 1">
+        <img src="/public/images/SHURE.png" alt="бренд 2">
+        <img src="/public/images/CASIO.png" alt="бренд 3">
+        <img src="/public/images/FENDER.png" alt="бренд 4">
+        <img src="/public/images/IBANEZ.png" alt="бренд 5">
+        <img src="/public/images/KORG.png" alt="бренд 6">
+        <img src="/public/images/GIBSON.png" alt="бренд 7">
+        <img src="/public/images/PIONEER.png" alt="бренд 8">
+        <img src="/public/images/JBL.png" alt="бренд 9">
+        <img src="/public/images/SENNHEISER.png" alt="бренд 10">
+        <img src="/public/images/EPIPHONE.png" alt="бренд 11">
+        <img src="/public/images/FOCUSRITE.png" alt="бренд 12">
+      </div>
+    </div>
+  </section>
+  <section class="events">
+    <div class="wrapper">
+      <h2 data-translate="eventsTitle"></h2>
+      <div data-wow-delay="0.2s" class="events__items wow animate__animated animate__fadeInUp">
+        <div class="event-item">
+          <img src="/public/images/Anacondaz-event.png" alt="изображение события">
+          <span>автограф-сессия, 18 Января</span>
+          <h3>Автограф-сессия с группой Anacondaz в Алмате</h3>
+          <span>Алмата, «Sound of Music»: ул. Сатпаева, 104А, 16:00</span>
+        </div>
+        <div class="event-item">
+          <img src="/public/images/Mummy-event.png" alt="изображение события">
+          <span>Мы рекомендуем, 2 Марта</span>
+          <h3>Концерт группы Мумий Тролль в Москве</h3>
+          <span>Москва, «МТ music bar»: ул. Новый Арбат, 15, 20:00</span>
+        </div>
+        <div class="event-item">
+          <img src="/public/images/Pizza-event.png" alt="изображение события">
+          <span>Мы рекомендуем, 1 Марта</span>
+          <h3>Концерт группы PIZZA в Москвее</h3>
+          <span>Москва, «VK Gispy»: Болотная наб., 3/4 стр. 2, 19:30</span>
+        </div>
+        <div class="event-item">
+          <img src="/public/images/Hatters-event.png" alt="изображение события">
+          <span>автограф-сессия, 18 Января</span>
+          <h3>Автограф-сессия с группой The Hatters в Санкт-Петерсбурге</h3>
+          <span>Санкт-Петерсбург, «Sound of Music»: Невский пр., 77Б, 16:00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrapper">
+      <a href="/"><img src="/public/images/music-logo.png" alt="логотип"></a>
+      <div class="footer-content">
+        <div class="footer__categoryes">
+          <h4 data-translate="categoriesTitle"></h4>
+          <a href="/" data-translate="category1"></a>
+          <a href="/" data-translate="category2"></a>
+          <a href="/" data-translate="category3"></a>
+          <a href="/" data-translate="category4"></a>
+          <a href="/" data-translate="category5"></a>
+          <a href="/" data-translate="category6"></a>
+          <a href="/" data-translate="category7"></a>
+          <a href="/" data-translate="category8"></a>
+        </div>
+        <div class="footer__categoryes">
+          <h4 data-translate="addressesTitle"></h4>
+          <span data-translate="address1"></span>
+          <span data-translate="address2"></span>
+          <span data-translate="address3"></span>
+          <span data-translate="address4"></span>
+          <span data-translate="address5"></span>
+          <span data-translate="address6"></span>
+        </div>
+        <div class="footer__dopInf">
+          <div class="footer__dopInf-time">
+            <h4 data-translate="workTimeTitle"></h4>
+            <span data-translate="workTime"></span>
+            <p data-translate="noBreaks"></p>
+          </div>
+          <div class="footer__dopInf__social">
+            <h5 data-translate="socialTitle"></h5>
+            <div class="footer__dopInf__social-content">
+              <a href="/"><img src="/public/icons/vk.png" alt="icon vk"></a>
+              <a href="/"><img src="/public/icons/tg.png" alt="icon tg"></a>
+              <a href="/"><img src="/public/icons/pinterest.png" alt="icon pint"></a>
+              <a href="/"><img src="/public/icons/youtube.png" alt="icon youtube"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+  <script src="/src/animation/wow.min.js"></script>
+  <script> new WOW().init(); </script>
+</body>
+</html>

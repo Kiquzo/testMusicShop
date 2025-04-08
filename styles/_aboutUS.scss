@@ -1,0 +1,26 @@
+.usInformation{
+    @include center-container;
+}
+
+.usInformation .wrapper{
+    padding: 123px 100px;
+    display: flex;
+    gap: 0 170px;
+    overflow: hidden;
+}
+
+.usInformation img{
+    width: 874px;
+    height: 558px;
+}
+
+.usInformation-block{
+    display: flex;
+    flex-direction: column;
+    gap: 17px 0;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+    color: $black;
+    text-align: justify;
+}

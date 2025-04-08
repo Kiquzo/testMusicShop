@@ -1,0 +1,191 @@
+.adminWrapper{
+    padding: 10px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminSection{
+    @include center-container;
+    background-image: url(/public/images/bgAdmin.png);
+    background-size: cover;
+    background-position: center;
+    // height: 769px;
+    overflow: hidden;
+}
+
+.adminSection .wrapper{
+    padding: 159px 100px;
+    display: flex;
+    align-items: center;
+    background-color: rgba($color: #212121, $alpha: 0.2);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.regmodal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 100px;
+    width: 100%; 
+    height: calc(100% - 100px);
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.regmodal-content {
+    background-color: #fefefe;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; 
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.regmodal-content h2 {
+    font-family: "Inter";
+    font-size: 27px;
+    margin-bottom: 32px;
+}
+
+.regmodal-content label {
+    display: block;
+    text-align: left;
+    font-family: "Inter";
+    font-size: 15px;
+    margin: 10px 0 5px;
+}
+
+.regmodal-content input[type="email"], input[type="password"], input[type="text"]{
+    width: calc(100% - 58px);
+    height: 20px;
+    padding: 10px;
+    padding-left: 48px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.regmodal-content button[type="submit"] {
+    background: linear-gradient(to right, #ED213A, #93291E);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 402px;
+}
+
+.regmodal-content span{
+    font-family: "Inter";
+    font-size: 15px;
+    position: absolute;
+    margin-top: -40px;
+    margin-left: 349px;
+}
+
+.lockicon{
+    position: absolute;
+    margin-top: -43px;
+    margin-left: 15px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 100px;
+    width: 100%; 
+    height: calc(100% - 100px);
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; 
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    font-family: "Inter";
+    font-size: 27px;
+    margin-bottom: 32px;
+}
+
+.modal-content label {
+    display: block;
+    text-align: left;
+    font-family: "Inter";
+    font-size: 15px;
+    margin: 10px 0 5px;
+}
+
+.modal-content input[type="email"], input[type="password"] {
+    width: calc(100% - 58px);
+    height: 20px;
+    padding: 10px;
+    padding-left: 48px;
+    margin: 5px 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button[type="submit"] {
+    background: linear-gradient(to right, #ED213A, #93291E);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 402px;
+}
+
+.forgot-password {
+    font-family: "Inter";
+    display: block;
+    text-align: right;
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.emailsms{
+    position: absolute;
+    margin-top: -43px;
+    margin-left: -186px;
+}
+
+.eyeicon{
+    position: absolute;
+    margin-top: -43px;
+    margin-left: 37%;
+}

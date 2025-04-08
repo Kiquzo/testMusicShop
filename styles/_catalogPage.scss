@@ -1,0 +1,56 @@
+#acustic,
+#electric,
+#bass,
+#guitarAmplifiers,
+#synthesizers,
+#drums,
+#micros,
+#acsesuars {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+#acustic.active-section,
+#electric.active-section,
+#bass.active-section,
+#guitarAmplifiers.active-section,
+#synthesizers.active-section,
+#drums.active-section,
+#micros.active-section,
+#acsesuars.active-section {
+    display: flex;
+    opacity: 1;
+}
+
+#first-category.active-category,
+#second-category.active-category,
+#third-category.active-category,
+#fourth-category.active-category,
+#fifth-category.active-category,
+#six-category.active-category,
+#seven-category.active-category,
+#eight-category.active-category {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        animation: underline 0.3s ease;
+    }
+}
+
+@keyframes underline {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

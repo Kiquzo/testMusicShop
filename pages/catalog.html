@@ -1,0 +1,1277 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Sound of Music</title>
+</head>
+<body>
+    <div id="consultationModal" class="conmodal">
+        <div class="consultation-content">
+            <h2 data-translate="consultationTitle"></h2>
+            <p data-translate="consultationSubtitle"></p>
+            <form id="consultationForm">
+                <label for="conname" data-translate="nameLabel"></label>
+                <input type="text" id="conname" name="name" data-translate-placeholder="namePlaceholder">
+
+                <label for="conemail" data-translate="emailLabel"></label>
+                <input type="email" id="conemail" name="email" data-translate-placeholder="emailPlaceholder">
+
+                <label for="conmessage" data-translate="questionLabel"></label>
+                <textarea id="messageModal" name="message" maxlength="1000"
+                    data-translate-placeholder="questionPlaceholder"></textarea>
+                <button type="submit" data-translate="signUpButton"></button>
+            </form>
+        </div>
+    </div>
+    <div id="contactsModal" class="contacts__modal">
+        <div class="contacts__content">
+            <div class="wrapper">
+                <div class="modal__phones">
+                    <div class="modal-header" data-translate="contactsTitle"></div>
+                    <a class="phone" href="/">+ 8 800 555 00 75</a>
+                    <a class="phone" href="/">+ 8 495 641 59 59</a>
+                    <a class="mailContact" href="/">soundofmusic@gmail.com</a>
+                </div>
+                <div class="modal__addresses">
+                    <div class="modal-header" data-translate="addressesTitle"></div>
+                    <span data-translate="address1"></span>
+                    <span data-translate="address2"></span>
+                    <span data-translate="address3"></span>
+                    <span data-translate="address4"></span>
+                    <span data-translate="address5"></span>
+                    <span data-translate="address6"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="wrapper">
+            <a href="/"><img src="/public/images/music-logo.png" alt="логотип"></a>
+            <div class="header__icons">
+                <button id="open-cart-btn"><img src="/public/icons/cart.png" alt="иконка корзины"></button>
+                <button id="open-email"><img src="/public/icons/message.png" alt="иконка консультации"></button>
+                <button id="open-sidebar"><img src="/public/icons/menu.png" alt="иконка меню"></button>
+            </div>
+        </div>
+    </header>
+    <div id="cart-modal" class="cart-modal hidden">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2 data-translate="cartTitle"></h2>
+                <button id="close-cart-btn">✖</button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="cart-footer">
+                <p id="cart-total" data-translate="cartTotal"></p>
+                <button id="checkout-btn" data-translate="checkoutButton"></button>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar animate__animated" id="sidebar">
+        <div class="wrapper">
+            <div class="sidebar__block">
+                <div class="sidebar__block-header" data-translate="sectionsTitle"></div>
+                <div class="sidebar__block-nav">
+                    <a href="/" data-translate="homeLink"></a>
+                    <a href="/src/pages/catalog.html" data-translate="catalogLink"></a>
+                    <a href="/src/pages/aboutUs.html" data-translate="aboutUsLink"></a>
+                    <button class="open-phone" data-translate="contactsLink"></button>
+                </div>
+                <div class="sidebar__block-header" data-translate="languagesTitle"></div>
+                <div class="sidebar_languages">
+                    <button id="RU">RU</button>
+                    <button id="EN">EN</button>
+                </div>
+                <div class="sidebar__block-header" data-translate="addressesTitle"></div>
+                <div class="sidebar_addresses">
+                    <span data-translate="address1"></span>
+                    <span data-translate="address2"></span>
+                    <span data-translate="address3"></span>
+                    <span data-translate="address4"></span>
+                    <span data-translate="address5"></span>
+                    <span data-translate="address6"></span>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="entry__section">
+        <div class="wrapper">
+            <div class="category">
+                <h2 data-translate="selectCategoriesTitle"></h2>
+                <div class="category-wrapper">
+                    <a class="category__content" id="first-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category1"></span>
+                        </div>
+                    </a>
+                    <a class="category__content" id="second-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category2"></span>
+                        </div>
+                    </a>
+                    <a class="category__content" id="third-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category3"></span>
+                        </div>
+                    </a>
+                    <a class="category__content" id="fourth-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category4"></span>
+                        </div>
+                    </a>
+                    <a class="category__content" id="fifth-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category5"></span>
+                        </div>
+                    </a>
+                    <a class="category__content" id="six-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category6"></span>
+                        </div>
+                    </a>
+                    <a class="category__content" id="seven-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category7"></span>
+                        </div>
+                    </a>
+                    <a class="category__content" id="eight-category" href="/">
+                        <div class="category__content-titel">
+                            <span data-translate="category8"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="acustic" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category1"></h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-TCY10E-BK.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">39 906 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">IBANEZ TCY10E-BK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/YAMAHA-F310.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">17 592 ₽</span><span class="first-price">21 990
+                            ₽</span>
+                        <div id="procent">-20%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">YAMAHA F310</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/BLUE-LAVA-Original.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">37 800 ₽</span><span class="first-price">42 000
+                            ₽</span>
+                        <div id="procent">-10%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">BLUE LAVA Original Acoustic</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/VESTON-F-38.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">8 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">VESTON F-38/BK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/FLIGHT-F-230C-NA.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">26 643 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">FLIGHT F-230C NA</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/CRAFTER-D-7-NC.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">43 790 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">CRAFTER D-7 /NC</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-Aurora-D1-C-RB.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">8 406 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">ROCKDALE Aurora D1 C RB</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/YAMAHA-F310.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">17 592 ₽</span><span class="first-price">21 990
+                            ₽</span>
+                        <div id="procent">-20%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">YAMAHA F310</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/BLUE-LAVA-Original.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">37 800 ₽</span><span class="first-price">42 000
+                            ₽</span>
+                        <div id="procent">-10%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">BLUE LAVA Original Acoustic</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/FENDER-CD-60-Black.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">10 890 ₽</span>
+                        <span class="first-price">12 810 ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">FENDER CD-60 Black</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-TCM50-GBO.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">26 643 ₽</span>
+                        <span class="first-price">40 990 ₽</span>
+                        <div id="procent">-35%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">IBANEZ TCM50-GBO</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Maton-CUSTOM-SHOP-TE-PERSONAL.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">798 220 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">Maton CUSTOM-SHOP-TE-PERSONAL</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-Folk-Novel-F1BK.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">8 800 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">ROCKDALE Folk Novel F1BK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Maton-CUSTOM-SHOP-FLATPICKER.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">744 702 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">Maton CUSTOM-SHOP-FLATPICKER</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Maton-FLATPICKER.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">539 280 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">Maton FLATPICKER</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/TAKAMINE-TSP178ACKN.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">244 000 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">TAKAMINE TSP178ACKN</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/TAKAMINE-GN71CE-BSB.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">69 290 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">TAKAMINE GN71CE BSB</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/TAKAMINE-TSP178ACKN-BLUE.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">244 000 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Акустическая гитара</a>
+                        <a id="nameOfItem" href="/">TAKAMINE TSP178ACKN BLUE</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="electric" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category2"></h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-GRGR131EX-BKF.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">33 906 ₽</span><span class="first-price">39 890
+                            ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">IBANEZ GRGR131EX-BKF</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-Stars-HSS-BK.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">10 692 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">ROCKDALE Stars HSS BK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-Stars-HSS-WH.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">17 800 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">ROCKDALE Stars HSS WH</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-Stars-HSS-SB.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">10 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">ROCKDALE Stars HSS SB</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/EART-GW2-NBK.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">47 030 ₽</span><span class="first-price">58 990
+                            ₽</span>
+                        <div id="procent">-20%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">EART GW2 NBK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/FARIDA-F-5050-2-Tone-Sunburst.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">47 030 ₽</span>
+                        <span class="first-price">58 990 ₽</span>
+                        <div id="procent">-20%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">FARIDA F-5050 2-Tone Sunburst</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-GRGR131EX-BKF.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">33 906 ₽</span><span class="first-price">39 890
+                            ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">IBANEZ GRGR131EX-BKF</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-GRX40-MGN.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">30 790 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">IBANEZ GRX40-MGN</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/SCHECTER-SGR-C-1-FR-WSN.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">37 800 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">SCHECTER SGR C-1 FR WSN</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-AG75G-BS.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">81 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">IBANEZ AG75G-BS</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/AF75G-BKF.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">81 890 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">AF75G-BKF</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Schecter-BANSHEE-6-SGR-WSN.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">31 310 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">Schecter BANSHEE-6 SGR WSN</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-GRGR131EX-BKF.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">33 906 ₽</span><span class="first-price">39 890
+                            ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">IBANEZ GRGR131EX-BKF</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/GIBSON-Slash-Les-Paul.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">676 000 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">GIBSON Slash Les Paul November Burst</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/GIBSON-Les-Paul-Standard.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">547 200 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">GIBSON Les Paul Standard 50s Tobacco Burst</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/FENDER-American-Performer-Telecaster.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">259 000 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">FENDER American Performer Telecaster MNS</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/FENDER-American-Performer.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">288 643 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">FENDER American Performer</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/G&L-FD.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">299 000 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Электрогитара</a>
+                        <a id="nameOfItem" href="/">G&L FD ASAT Classic Alnico Butterscotch Blonde</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="bass" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category3"></h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-Stars-PB-Bass.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">13 906 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">ROCKDALE Stars PB Bass Black</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-GSR200B-WNF.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">40 990 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ GSR200B-WNF</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-Stars-HSS-WH.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">17 800 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ Stars HSS WH</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-Stars-HSS-SBB.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">10 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ Stars HSS SBB</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-SR300EB-WK.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">58 790 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ SR300EB-WK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/FARIDA-F-5050.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">47 030 ₽</span>
+                        <span class="first-price">58 990 ₽₽</span>
+                        <div id="procent">-20%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">FARIDA F-5050 2-Tone Sunburst</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-SD3341-BKF.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">33 906 ₽</span><span class="first-price">39 890
+                            ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ SD3341-BKF</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-T3100-BASS.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">30 790 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ T3100-BASS</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/SCHECTER-B990-BS.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">37 800 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">SCHECTER-B990-BS</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-BS75B-RW.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">81 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ BS75B-RW</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/KORG-BKF.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">81 890 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">KORG-BKF</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-BTB865SC-WKL.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">148 310 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Бас-гитары</a>
+                        <a id="nameOfItem" href="/">IBANEZ BTB865SC-WKL</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="guitarAmplifiers" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category4"></h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/MARSHALL-MG15G.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">18 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Усилители для гитар</a>
+                        <a id="nameOfItem" href="/">MARSHALL MG15Gk</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/VOX-VT20X-PRO.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">41 980 ₽</span><span class="first-price">49 390
+                            ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Усилители для гитар</a>
+                        <a id="nameOfItem" href="/">VOX VT20X PRO</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/MARSHALL-CODE-25-M.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">46 390 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Усилители для гитар</a>
+                        <a id="nameOfItem" href="/">MARSHALL CODE 25 M</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Orange-Crush-20.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">18 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Усилители для гитар</a>
+                        <a id="nameOfItem" href="/">Orange Crush 20</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/VOX-VT20X.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">26 643 ₽</span><span class="first-price">40 990
+                            ₽</span>
+                        <div id="procent">-35%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Усилители для гитар</a>
+                        <a id="nameOfItem" href="/">VOX VT20X</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/MARSHALL-CODE-25-L.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">46 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Усилители для гитар</a>
+                        <a id="nameOfItem" href="/">MARSHALL CODE 25 L</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="synthesizers" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category5"></h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/BEHRINGER-TD-3-SB.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">14 806 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">BEHRINGER TD-3-SB</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/KORG-Minilogue-Bass.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">76 592 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">KORG Minilogue Bass</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/BIGFUN-EK-37.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">37 800 ₽</span>
+                        <span class="first-price">42 000 ₽</span>
+                        <div id="procent">-10%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">BIGFUN EK-37</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Midiplus-TINY.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">10 890 ₽</span>
+                        <span class="first-price">12 810 ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">Midiplus TINY+</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/KORG-Volca-Sample-2.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">26 643 ₽</span>
+                        <span class="first-price">40 990 ₽</span>
+                        <div id="procent">-35%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">KORG Volca Sample 2</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/YAMAHA-PSR-A350.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">46 390 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">YAMAHA PSR-A350</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Kurzweil-KP140-WH.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">43 260 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">Kurzweil KP140 WH</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/BEHRINGER-TD-3-BK.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">14 390 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">BEHRINGER TD-3-BK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/KORG-microKORG-S-MK-1S.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">71 990 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">KORG microKORG S MK-1S</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/KORG-Volca-Drum.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">18 800 ₽</span>
+                        <span class="first-price">20 890 ₽</span>
+                        <div id="procent">-10%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">KORG Volca Drum</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/KORG-Volca-Modular.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">26 643 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">KORG Volca Modular</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Donner-B1.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">16 310 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Синтезаторы</a>
+                        <a id="nameOfItem" href="/">Donner B1</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="drums" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category6">Ударные установки</h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/Pearl-RSJ465CC31.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">54 906 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">Pearl RSJ465C/C31</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/TAMA-CL52KRS-TPB.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">147 000 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">TAMA CL52KRS-TPB</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/TAMA-ST52H6C-SEM-STAGESTAR.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">133 900 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">TAMA ST52H6C-SEM STAGESTAR</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Pearl-RS585C-C91.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">105 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">Pearl RS585C/C91</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Rolling-Rock-JR-2232C.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">57 643 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">Rolling Rock JR-2232C Blue Snake</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/TAMA-MA42TZS-PBK-STARCLASSIC.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">700 390 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">TAMA MA42TZS-PBK STARCLASSIC</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROLAND-TD-07DMK.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">109 160 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">ROLAND TD-07DMK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-Impulse-Mini-Black.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">10 000 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">ROCKDALE Impulse Mini Black</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/GEWA-G9Pro-C5.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">618 900 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">GEWA G9Pro C5</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/STAGG-TIM-JR-316-RD.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">17 890 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">STAGG TIM JR 3/16 RD</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Weber-MickeyKit.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">12 543 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">Weber MickeyKit</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/TAMA-MA42TZS-PBK-STARCLASSIC-BLACK.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">532 860 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Барабаны</a>
+                        <a id="nameOfItem" href="/">TAMA MA42TZS-PBK STARCLASSIC-BLACK</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="micros" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category7">Микрофоны</h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/СОЮЗ-017-TUBE.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">439 990 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">СОЮЗ 017 TUBE</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/BEHRINGER-XM8500.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">17 592 ₽</span>
+                        <span class="first-price">21 990 ₽</span>
+                        <div id="procent">-20%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">BEHRINGER XM8500</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/СОЮЗ-1973.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">74 990 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">СОЮЗ 1973</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/СОЮЗ-MALFA.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">149 990 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">СОЮЗ MALFA</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/SHURE-VT20X.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">26 643 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">SHURE VT20X</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/BEHRINGER-C-1.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">6 390 ₽</span><span class="first-price">6 570 ₽</span>
+                        <div id="procent">-3%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">BEHRINGER C-1</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/NEUMANN-TLM-103.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">205 000 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">NEUMANN TLM 103</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/СОЮЗ-017-FET.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">239 990 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">СОЮЗ 017 FET</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/SHURE-SM7B.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">85 490 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">SHURE SM7B</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ISK-BM-800.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">11 640 ₽</span>
+                        <span class="first-price">13 690 ₽</span>
+                        <div id="procent">-15%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">ISK BM-800</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/СОЮЗ-023-Bomblet.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">139 990 ₽</span></div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">СОЮЗ 023-Bomblet</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/BEHRINGER-C-1U.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">5 790 ₽</span><span class="first-price">5 990 ₽</span>
+                        <div id="procent">-3%</div>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Микрофоны</a>
+                        <a id="nameOfItem" href="/">BEHRINGER C-1U</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="acsesuars" class="catalog">
+        <div class="wrapper">
+            <h2 data-translate="category8"></h2>
+            <div class="catalog-cards">
+                <div class="card">
+                    <img src="/public/catalog/Ernie-Ball-2148.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">1 906 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Струны акустика</a>
+                        <a id="nameOfItem" href="/">Ernie Ball 2148 Earthwood</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Ernie-Ball-2215.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">1 092 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Струны электро</a>
+                        <a id="nameOfItem" href="/">Ernie Ball 2215</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/ROCKDALE-RBS-45105.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">610 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Струны бас</a>
+                        <a id="nameOfItem" href="/">ROCKDALE RBS-45105</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-IAB542-BR.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">8 190 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Чехол акустика</a>
+                        <a id="nameOfItem" href="/">IBANEZ IAB542-BR</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/IBANEZ-IAB541-BR.png" alt="иконка товара">
+                    <div class="card__price"><span class="price">7 390 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Чехол электро</a>
+                        <a id="nameOfItem" href="/">IBANEZ IAB541-BR</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+                <div class="card">
+                    <img src="/public/catalog/Ernie-Ball-9118.png" alt="иконка товара">
+                    <div class="card__price">
+                        <span class="price">90 ₽</span>
+                    </div>
+                    <div class="card-links">
+                        <a id="categoryOfItem" href="/">Медиатор</a>
+                        <a id="nameOfItem" href="/">Ernie Ball 9118</a>
+                    </div>
+                    <button data-translate="btnAddProd"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="wrapper">
+            <a href="/"><img src="/public/images/music-logo.png" alt="логотип"></a>
+            <div class="footer-content">
+                <div class="footer__categoryes">
+                    <h4 data-translate="categoriesTitle"></h4>
+                    <a href="/" data-translate="category1"></a>
+                    <a href="/" data-translate="category2"></a>
+                    <a href="/" data-translate="category3"></a>
+                    <a href="/" data-translate="category4"></a>
+                    <a href="/" data-translate="category5"></a>
+                    <a href="/" data-translate="category6"></a>
+                    <a href="/" data-translate="category7"></a>
+                    <a href="/" data-translate="category8"></a>
+                </div>
+                <div class="footer__categoryes">
+                    <h4 data-translate="addressesTitle"></h4>
+                    <span data-translate="address1"></span>
+                    <span data-translate="address2"></span>
+                    <span data-translate="address3"></span>
+                    <span data-translate="address4"></span>
+                    <span data-translate="address5"></span>
+                    <span data-translate="address6"></span>
+                </div>
+                <div class="footer__dopInf">
+                    <div class="footer__dopInf-time">
+                        <h4 data-translate="workTimeTitle"></h4>
+                        <span data-translate="workTime"></span>
+                        <p data-translate="noBreaks"></p>
+                    </div>
+                    <div class="footer__dopInf__social">
+                        <h5 data-translate="socialTitle"></h5>
+                        <div class="footer__dopInf__social-content">
+                            <a href="/"><img src="/public/icons/vk.png" alt="icon vk"></a>
+                            <a href="/"><img src="/public/icons/tg.png" alt="icon tg"></a>
+                            <a href="/"><img src="/public/icons/pinterest.png" alt="icon pint"></a>
+                            <a href="/"><img src="/public/icons/youtube.png" alt="icon youtube"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+    <script src="/src/catalogLogic.js"></script>
+    <script src="/src/animation/wow.min.js"></script>
+</body>
+</html>

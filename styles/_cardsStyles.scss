@@ -1,0 +1,94 @@
+.catalog-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 62px;
+}
+
+.card{
+    width: 228px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #DFDFDF;
+    padding: 8px 8px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+.card img{
+    border-radius: 10px;
+    width: 212px;
+    height: 212px;
+    margin-bottom: 12px;
+}
+
+.card__price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // gap: 0 7px;
+}
+
+.price{
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 500;
+    color: $black;
+}
+
+.first-price{
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 300;
+    color: #667085;
+    text-decoration: line-through;
+}
+
+#procent{
+    width: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #ED213A;
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.card-links{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+#categoryOfItem{
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #667085;
+}
+
+#nameOfItem{
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: $black;
+}
+
+.card button{
+    margin-top: 15px;
+    background: #ED213A;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    padding: 12px 26px;
+}

@@ -1,0 +1,86 @@
+.conmodal {
+    display: none;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.consultation-content {
+    background-color: white;
+    margin: 3% auto;
+    padding: 20px;
+    border: none;
+    width: 498px; // Устанавливаем фиксированную ширину для модального окна
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.consultation-content h2 {
+    font-family: "Inter";
+    font-size: 27px;
+    margin-bottom: 10px;
+    color: $black;
+}
+
+.consultation-content label {
+    display: block;
+    text-align: left;
+    font-family: "Inter";
+    font-size: 15px;
+    margin: 10px 0 5px;
+    color: $black;
+}
+
+.consultation-content input[type="email"], 
+.consultation-content input[type="text"],
+#messageModal {
+    width: calc(100% - 20px); // Оставляем немного отступа от краев контейнера
+    color: $black;
+    height: 20px;
+    padding: 10px;
+    padding-left: 10px; // Устанавливаем нужные отступы
+    margin: 5px 0 10px;
+    border: 1px solid $black;;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+}
+
+.consultation-content input[type="email"]::placeholder,  
+.consultation-content input[type="text"]::placeholder,
+#messageModal::placeholder {
+    color: $black;
+}
+
+#messageModal {
+    height: 200px;
+    resize: none;
+    font-size: 15px;
+}
+
+.consultation-content button[type="submit"] {
+    background: linear-gradient(to right, #ED213A, #93291E);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    width: calc(100% - 20px); // Подгоняем ширину кнопки под контейнер
+}
+
+.consultation-content p {
+    font-family: "Inter";
+    font-size: 15px;
+    color: $black;
+    margin-bottom: 15px;
+}

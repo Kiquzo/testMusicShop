@@ -1,0 +1,71 @@
+.contacts__modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.contacts__content{
+    background-color: #A73737;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 444px;
+}
+
+.contacts__content .wrapper{
+    padding: 64px 77px;
+    display: flex;
+    flex-direction: column;
+    gap: 57px 0;
+}
+
+.modal__phones{
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+}
+
+.modal-header{
+    font-family: "Roboto";
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 9px;
+    margin-bottom: 15px;
+}
+
+.modal__phones a{
+    font-family: "Roboto";
+    color: white;
+    text-decoration: none;
+}
+
+.phone{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.mailContact{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.modal__addresses{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal__addresses span{
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
