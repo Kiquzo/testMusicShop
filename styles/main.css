@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 button {
@@ -1109,6 +1110,240 @@ footer h5 {
   position: absolute;
   margin-top: -43px;
   margin-left: 37%;
+}
+
+.admin-header {
+  background-color: blue;
+}
+
+.primary__adminSection {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.primary__adminSection-menu {
+  background-color: #A73737;
+  width: 370px;
+  padding-top: 70px;
+  padding-bottom: 289px;
+}
+
+.primary__adminSection-menu__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.classic-btn {
+  width: 370px;
+  height: 80px;
+  background-color: #FFEDBC;
+  border: none;
+  color: #1A1A1A;
+  font-family: "Inter";
+  font-size: 27px;
+}
+
+.classic-btn a {
+  text-decoration: none;
+  color: #1A1A1A;
+}
+
+.logout-admin {
+  margin-top: 25px;
+  width: 370px;
+  height: 80px;
+  background-color: white;
+  border: none;
+  text-decoration: underline;
+  color: #A75454;
+  font-family: "Inter";
+  font-size: 27px;
+  margin-bottom: 41%;
+}
+
+.logout-admin a {
+  color: #A75454;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 14px;
+}
+
+.primary__adminSection-window-header {
+  display: flex;
+  padding-top: 70px;
+}
+
+.primary__adminSection-window-header h2 {
+  font-family: "Roboto";
+  color: #1A1A1A;
+  font-size: 27px;
+  padding-left: 20px;
+}
+
+select {
+  margin-left: 50px;
+  height: 35px;
+}
+
+.primary__adminSection-window-header button {
+  border: none;
+  background: none;
+}
+
+#update {
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.primary__adminSection-window {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: white;
+}
+
+#table-container {
+  max-width: 990px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+thead {
+  background-color: #333;
+  color: #fff;
+}
+
+thead th {
+  padding: 10px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+tbody td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  max-width: 200px; /* Максимальная ширина для столбцов */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+tbody td:hover::after {
+  content: attr(data-fulltext);
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: normal;
+  z-index: 1;
+  max-width: 400px;
+}
+
+tbody tr.selected {
+  background-color: #ffd700; /* Цвет выделенной строки */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#saveChanges {
+  background: linear-gradient(to right, #7FB0C7, #1C455E);
+  border: none;
+  border-radius: 2px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+#view-table-container {
+  max-width: 990px;
+  overflow-x: auto;
+}
+
+#addModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: overlay;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+#addModal .modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+#addModal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#addModal .close:hover,
+#addModal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#addRecord {
+  background: linear-gradient(to right, #7FB0C7, #1C455E);
+  border: none;
+  border-radius: 2px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+#del {
+  margin-right: 10px;
 }
 
 .contacts__modal {

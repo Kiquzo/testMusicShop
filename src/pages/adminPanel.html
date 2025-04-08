@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="/public/images/music-logo.png">
+    <title>Sound of Music | Главная</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+</head>
+<body>
+    <header>
+        <div class="adminWrapper">
+            <a href="/"><img src="/public/images/music-logo.png" alt="логотип"></a>
+        </div>
+    </header>
+    <section class="primary__adminSection">
+        <div class="primary__adminSection-menu">
+            <div class="primary__adminSection-menu__wrapper">
+                <button id="adding" class="classic-btn">
+                    <span>Добавление в БД</span>
+                </button>
+                <button id="watchDB" class="classic-btn">
+                    <a href="#">
+                        <span>Просмотр БД</span>
+                    </a>
+                </button>
+            </div>
+            <button id="logoutAdmin" class="logout-admin">
+                <a href="/">
+                    <span>log out</span>
+                    <img src="/public/images/logout-red.png" alt="дверь">
+                </a>
+            </button>
+        </div>
+        <div class="primary__adminSection-window">
+            <div class="primary__adminSection-window-header">
+                <h2>Выбор таблицы</h2>
+                <select id="table-select">
+                    <option value="products">Товары</option>
+                    <option value="users">Пользователи</option>
+                    <option value="Consultations">Консультации</option>
+                    <option value="Category">Категории</option>
+                </select>
+                <button id="update">
+                    <img src="/public/images/edit.png" alt="Изменения">
+                </button>
+                <button id="del">
+                    <img src="/public/images/delete.png" alt="Удаление">
+                </button>
+                <button id="graph">
+                    <img src="/public/images/bar-chart.png" alt="График">
+                </button>
+            </div>
+            <div id="table-container"></div>
+        </div>
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Изменение записи</h2>
+                <form id="editForm">
+                    <!-- Динамически заполняемые поля формы -->
+                </form>
+                <button id="saveChanges" type="button">Сохранить изменения</button>
+            </div>
+        </div>
+        <div id="addModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Добавление записи</h2>
+                <form id="addForm">
+                    <!-- Динамически заполняемые поля формы -->
+                </form>
+                <button id="addRecord" type="button">Добавить запись</button>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
